@@ -1,12 +1,17 @@
 ﻿using System;
+using consoleLibrary.Models;
 
-namespace library
+namespace consoleLibrary
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+      var libr = new library();
+
+      Book theHobbit = new Book("The Hobbit", "JRR Tolkien");
+
+      libr.AddBook(theHobbit);
     }
+  }
 }
