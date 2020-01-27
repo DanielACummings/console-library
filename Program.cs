@@ -7,11 +7,26 @@ namespace consoleLibrary
   {
     static void Main(string[] args)
     {
-      var libr = new library();
+      //library setup
+      var libr = new Library();
 
-      Book theHobbit = new Book("The Hobbit", "JRR Tolkien");
+      var theHobbit = new Book("The Hobbit", "J.R.R. Tolkien");
+      var princeCaspian = new Book("Prince Caspian", "C.S. Lewis");
+      var theHungerGames = new Book("The Hunger Games", "Suzanne Collins");
 
       libr.AddBook(theHobbit);
+      libr.AddBook(princeCaspian);
+      libr.AddBook(theHungerGames);
+
+      //main app
+      bool inLibrary = true;
+      while (inLibrary)
+      {
+        libr.PrintBooks();
+        string selection = Console.ReadLine();
+        libr.Quit(selection);
+        libr.Checkout(selection);
+      }
     }
   }
 }
